@@ -1,0 +1,47 @@
+---
+- name: Check current PHP module stream
+  ansible.builtin.shell: |
+    dnf module list php --enabled | awk '$1 == "php" { print $2 }'
+  register: current_php_stream
+  changed_when: false
+  failed_when: false
+
+- name: Debug current PHP stream
+  ansible.builtin.debug:
+    msg: "Currently enabled PHP stream: {{ current_php_stream.stdout | default('none') }}"
+
+- name: Enable PHP module stream
+  ansible.builtin.command: > 
+    dnf module enable php:{{ php_module_stream }} -y
+  args:
+    creates: /etc/dnf/modules.d/php.module
+
+- name: Install PHP and required packages
+  ansible.builtin.dnf:
+    name: "{{ php_packages }}"
+    state: present
+
+- name: Allow httpd to connect to the database over the network
+  ansible.posix.seboolean:
+    name: httpd_can_network_connect_db
+    state: true
+    persistent: true
+
+- name: Check installed PHP version
+  ansible.builtin.command: php -v
+  register: php_version
+  changed_when: false
+  failed_when: php_version.rc !=0
+
+- name: Display PHP version
+  ansible.builtin.debug:
+    msg: "{{ php_version.stdout_lines }}"
+   
+- name: Copy DB config to web root
+  ansible.builtin.copy:
+    src: db_config.php
+    dest: /var/www/html/db_config.php
+    owner: apache
+    group: apache
+    mode: '0644'
+  notify: restore_selinux_context

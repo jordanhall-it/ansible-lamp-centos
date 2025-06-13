@@ -1,0 +1,10 @@
+---
+apache_package: httpd
+firewall_package: firewalld
+mysql_package: mysql-server
+mysql_service: mysqld
+php_module_stream: "8.2"
+php_packages:
+  - php
+  - php-mysqlnd
+

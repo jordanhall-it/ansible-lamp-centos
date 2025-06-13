@@ -1,0 +1,34 @@
+---
+- name: Create sample database
+  community.mysql.mysql_db:
+    name: sampledb
+    state: present
+
+- name: Create sample user and grant privileges
+  community.mysql.mysql_user:
+    name: sqladmin
+    password: sqlpass
+    priv: 'sampledb.*:ALL'
+    host: localhost
+    state: present
+
+- name: Import schema
+  ansible.builtin.copy:
+    src: sample_schema.sql
+    dest: /tmp/sample_schema.sql
+
+- name: Check if users table exists
+  community.mysql.mysql_query:
+    login_user: sqladmin
+    login_password: sqlpass 
+    login_db: sampledb
+    query: "SHOW TABLES LIKE 'users';"
+  register: table_check
+  failed_when: false
+
+- name: Load Schema into sampledb
+  community.mysql.mysql_db:
+    name: sampledb
+    state: import
+    target: /tmp/sample_schema.sql
+  when: table_check.query_result[0] | length == 0

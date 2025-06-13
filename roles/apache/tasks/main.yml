@@ -1,0 +1,36 @@
+---
+- name: Install Apache and Firewall package
+  ansible.builtin.dnf:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - "{{ apache_package }}"
+    - "{{ firewall_package }}"
+
+- name: Enable and Start Apache and Firewall service
+  ansible.builtin.service:
+    name: "{{ item }}"
+    state: started
+    enabled: true
+  loop: 
+    - "{{ apache_package }}"
+    - "{{ firewall_package }}"
+
+- name: Allow Apache through the firewall
+  ansible.posix.firewalld:
+    service: "{{ item }}"
+    state: enabled
+    immediate: true
+    permanent: true
+  loop:
+    - http
+    - https
+
+- name: Deploy index.php
+  ansible.builtin.copy:
+    src: index.php
+    dest: /var/www/html/index.php
+    owner: apache
+    group: apache
+    mode: '0644'
+  notify: restore_selinux_context

@@ -1,0 +1,17 @@
+---
+- name: Install MySQL and Python 3 PyMySQL library
+  ansible.builtin.dnf:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - "{{ mysql_package }}"
+    - python3-PyMySQL
+
+- name: Enable and Start MySQL
+  ansible.builtin.service:
+    name: "{{ mysql_service }}"
+    state: started
+    enabled: true
+
+- name: Include DB setup tasks
+  ansible.builtin.include_tasks: db_setup.yml

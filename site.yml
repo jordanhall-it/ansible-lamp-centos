@@ -1,0 +1,10 @@
+---
+- name: LAMP Stack Configuration
+  hosts: lamp
+  become: true
+  remote_user: ansible
+  roles:
+    - apache
+    - mysql
+    - php
+    - phpmyadmin

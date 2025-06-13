@@ -1,0 +1,23 @@
+---
+- name: Install Epel repository
+  ansible.builtin.dnf:
+    name: epel-release
+    state: present
+
+- name: Install phpMyAdmin
+  ansible.builtin.dnf:
+    name: phpMyAdmin
+    state: present
+
+- name: Ensure phpMyAdmin is accessible in Apache
+  ansible.builtin.command: restorecon -R /usr/share/phpMyAdmin
+
+- name: Open phpMyAdmin access in Apache (if needed)
+  ansible.builtin.copy:
+    src: phpmyadmin.conf
+    dest: /etc/httpd/conf.d/phpMyAdmin.conf
+    owner: root
+    group: root
+    mode: '0644'
+  notify: restart_httpd
+
