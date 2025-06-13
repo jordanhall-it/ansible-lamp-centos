@@ -16,8 +16,8 @@ phpMyAdmin
 ✅ Uses Ansible best practices with roles and handlers
 🗂️ Project Structure
 
+```
 ansible-lamp-centos/
-
 ├── ansible.cfg
 ├── collections
 │   └── requirements.yml
@@ -54,7 +54,7 @@ ansible-lamp-centos/
 │       └── tasks
 │           └── main.yml
 └── site.yml
-
+```
 
 🛠️ Installation Requirements
 
