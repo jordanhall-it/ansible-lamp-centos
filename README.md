@@ -146,15 +146,15 @@ The phpMyAdmin web interface <ip-address/phpmyadmin> prompts you to log in with 
 
 ### ✅ Website index.php output (with MySQL user data)
 
-![index.php output](screenshots/index-page.png)
+See screenshots/index-page.png
 
 ### ✅ phpMyAdmin login screen
 
-![phpMyAdmin login page](screenshots/phpmyadmin-login.png)
+See screenshots/phpmyadmin-login.png
 
 ### ✅ Viewing the `users` table inside phpMyAdmin
 
-![phpMyAdmin users table](screenshots/phpmyadmin-users-table.png)
+See screenshots/phpmyadmin-users-table.png
 
 
 📚 Skills Demonstrated
