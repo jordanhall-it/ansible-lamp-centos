@@ -173,7 +173,15 @@ PHP/Apache configuration
 Modular role-based Ansible playbooks
 
 
-📜 License
+## 👤 Author
 
+**Jordan Hall**
+
+Linux System Administrator | RHCSA Certified | RHCE in Progress
+🔗 [GitHub](https://github.com/jordanhall-it)  
+💼 [LinkedIn](https://www.linkedin.com/in/jordanhall-it)  
+📫 Contact: [jordanhall.it@gmail.com](mailto:jordanhall.it@gmail.com)
+
+📜 License
 
 MIT License
