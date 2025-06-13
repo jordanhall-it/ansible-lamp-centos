@@ -18,81 +18,42 @@ phpMyAdmin
 
 ansible-lamp-centos/
 
-├── README.md
-
 ├── ansible.cfg
-
-├── inventory/
-
-│   └── hosts.ini
-├── group_vars/
-
-│   └── all.yml
-├── roles/
-
-│   ├── apache/
-
-│   │   ├── files/
-
-│   │   │   └── index.php
-
-│   │   ├── handlers/
-
-│   │   │   └── main.yml
-
-│   │   └── tasks/
-
-│   │       └── main.yml
-
-│   ├── mysql/
-
-│   │   ├── files/
-
-│   │   │   └── sample_schema.sql
-
-│   │   ├── tasks/
-
-│   │   │   ├── db_setup.yml
-
-│   │   │   └── main.yml
-
-│   │   └── handlers/
-
-│   │       └── main.yml
-
-│   ├── php/
-
-│   │   ├── files/
-
-│   │   │   └── db_config.php
-
-│   │   ├── handlers/
-
-│   │   │   └── main.yml
-
-│   │   └── tasks/
-
-│   │       └── main.yml
-
-│   ├── phpmyadmin/
-
-│   │   ├── files/
-
-│   │   │   └── phpmyadmin.conf
-
-│   │   ├── handlers/
-
-│   │   │   └── main.yml
-
-│   │   └── tasks/
-
-│   │       └── main.yml
-
-├── collections/
-
-│   └── requirements.yml
-
-├── site.yml
+├── collections
+│   └── requirements.yml
+├── group_vars
+│   └── all.yml
+├── inventory
+│   └── hosts.ini
+├── roles
+│   ├── apache
+│   │   ├── files
+│   │   │   └── index.php
+│   │   ├── handlers
+│   │   │   └── main.yml
+│   │   └── tasks
+│   │       └── main.yml
+│   ├── mysql
+│   │   ├── files
+│   │   │   └── sample_schema.sql
+│   │   └── tasks
+│   │       ├── db_setup.yml
+│   │       └── main.yml
+│   ├── php
+│   │   ├── files
+│   │   │   └── db_config.php
+│   │   ├── handlers
+│   │   │   └── main.yml
+│   │   └── tasks
+│   │       └── main.yml
+│   └── phpmyadmin
+│       ├── files
+│       │   └── phpmyadmin.conf
+│       ├── handlers
+│       │   └── main.yml
+│       └── tasks
+│           └── main.yml
+└── site.yml
 
 
 🛠️ Installation Requirements
