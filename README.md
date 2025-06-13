@@ -178,8 +178,11 @@ Modular role-based Ansible playbooks
 **Jordan Hall**
 
 Linux System Administrator | RHCSA Certified | RHCE in Progress
-🔗 [GitHub](https://github.com/jordanhall-it)  
-💼 [LinkedIn](https://www.linkedin.com/in/jordanhall-it)  
+
+🔗 [GitHub](https://github.com/jordanhall-it)
+
+💼 [LinkedIn](https://www.linkedin.com/in/jordanhall-it)
+
 📫 Contact: Email: jordanhall.it@gmail.com
 
 📜 License
