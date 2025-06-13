@@ -146,7 +146,7 @@ The phpMyAdmin web interface <ip-address/phpmyadmin> prompts you to log in with 
 
 ### ✅ Website index.php output (with MySQL user data)
 
-![index.php output](screenshots/index-page.png)
+![index.php output](https://raw.githubusercontent.com/jordanhall-it/ansible-lamp-centos/main/screenshots/index-page.png)
 
 ### ✅ phpMyAdmin login screen
 
