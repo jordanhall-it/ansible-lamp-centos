@@ -146,15 +146,15 @@ The phpMyAdmin web interface <ip-address/phpmyadmin> prompts you to log in with 
 
 ### ✅ Website index.php output (with MySQL user data)
 
-See screenshots/index-page.png
+![Website index.php output](screenshots/index-page.png)
 
 ### ✅ phpMyAdmin login screen
 
-See screenshots/phpmyadmin-login.png
+![phpMyAdmin login](screenshots/phpmyadmin-login.png)
 
 ### ✅ Viewing the `users` table inside phpMyAdmin
 
-See screenshots/phpmyadmin-users-table.png
+![phpMyAdmin users table](screenshots/phpmyadmin-users-table.png)
 
 
 📚 Skills Demonstrated
@@ -180,7 +180,7 @@ Modular role-based Ansible playbooks
 Linux System Administrator | RHCSA Certified | RHCE in Progress
 🔗 [GitHub](https://github.com/jordanhall-it)  
 💼 [LinkedIn](https://www.linkedin.com/in/jordanhall-it)  
-📫 Contact: [jordanhall.it@gmail.com](mailto:jordanhall.it@gmail.com)
+📫 Contact: Email: jordanhall.it@gmail.com
 
 📜 License
 
