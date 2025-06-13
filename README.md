@@ -61,7 +61,9 @@ ansible-lamp-centos/
 │   └── requirements.yml
 ├── site.yml
 
+
 🛠️ Installation Requirements
+
 
 Control Node:
 
@@ -81,7 +83,9 @@ Python 3 installed on managed nodes (required for Ansible modules)
 
 Firewalld enabled for firewall management
 
+
 🚀 How to Run
+
 
 Clone the repository:
 
@@ -97,7 +101,9 @@ Run the playbook:
 
 ansible-playbook -i inventory/hosts.ini site.yml
 
+
 🐞 Troubleshooting Tips
+
 
 Playbook fails due to missing Python on managed nodes:
 
@@ -131,11 +137,15 @@ SSH connection issues:
 
 Verify your control node can SSH into managed nodes without prompts.
 
+
 🧪 Sample Output Page
+
 
 The landing page includes a dynamic table that displays user records from the MySQL database.
 
+
 📚 Skills Demonstrated
+
 
 Linux System Administration 🐧
 
@@ -149,6 +159,8 @@ PHP/Apache configuration
 
 Modular role-based Ansible playbooks
 
+
 📜 License
+
 
 MIT License
