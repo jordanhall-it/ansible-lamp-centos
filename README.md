@@ -79,9 +79,11 @@ ansible-lamp-centos/
 
 2. **Customize inventory/hosts.ini** with your server IP(s).
 
-3. **Modify group_vars/all.yml** if you want to adjust package names, PHP version, or other variables.
+3. **Install necessary collections via requirements file** Run: ```ansible-galaxy collection install -r ./collections/requirements.yml ```
 
-4. **Run the playbook:**
+4. **Modify group_vars/all.yml** if you want to adjust package names, PHP version, or other variables.
+
+5. **Run the playbook:**
    ```bash
    ansible-playbook -i inventory/hosts.ini site.yml
    ```
